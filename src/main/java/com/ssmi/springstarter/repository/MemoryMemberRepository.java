@@ -1,6 +1,7 @@
 package com.ssmi.springstarter.repository;
 
 import com.ssmi.springstarter.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -11,6 +12,7 @@ import java.util.*;
  * date           : 2025-10-13
  * description    :
  */
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
