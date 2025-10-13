@@ -15,7 +15,7 @@ import java.util.Optional;
  * date           : 2025-10-13
  * description    :
  */
-@Service
+
 public class MemberService {
 
     // 회원 서비스가 메모리 회원 리포지토리 직접 생성

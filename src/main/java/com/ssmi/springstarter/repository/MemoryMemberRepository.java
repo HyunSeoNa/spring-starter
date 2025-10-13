@@ -12,7 +12,6 @@ import java.util.*;
  * date           : 2025-10-13
  * description    :
  */
-@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
