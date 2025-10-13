@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestComponent;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * description  :
  */
 @SpringBootTest
-@TestComponent
+@Transactional
 public class MemberServiceIntegrationTest {
     @Autowired MemberService memberService;
     @Autowired MemberRepository memberRepository;
@@ -37,7 +38,6 @@ public class MemberServiceIntegrationTest {
 
     @Test
     public void 중복_회원_예외() throws Exception {
-
         Member member1 = new Member();
         member1.setName("spring");
 
@@ -45,7 +45,6 @@ public class MemberServiceIntegrationTest {
         member2.setName("spring");
 
         memberService.join(member1);
-
         IllegalStateException e = assertThrows(IllegalStateException.class,
                 () -> memberService.join(member2));//예외가 발생해야 한다.
 
