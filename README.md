@@ -54,3 +54,21 @@
    * Connection, Statement, ResultSet 자동 관리
 2. 사용 자원 자동 정리
    * close()를 수동으로 호출하지 않아도 됨.
+
+## JPA (Java Persistence API)
+### 정의
+* 자바의 ORM(Object Relational Mapping) 표준 인터페이스
+* 객체와 데이터베이스 테이블을 자동으로 매핑해주는 기술의 표준
+* JPA는 규약이고, 구현체로는 Hibernate, EclipseLink, OpenJPA가 있다. 
+* SpringBoot는 구현체를 기본적으로 Hibernate를 사용
+
+### JPA 주요 기능
+1. ORM - 객체와 데이터베이서의 테이블을 맵핑
+2. Entity - 데이터베이스 테이블과 매핑되는 자바 클래스
+3. EntityManager - 객체를 저장, 조회, 수정, 삭제하는 JPA의 중요 인터페이스
+4. Persistence Context - 객체의 생명주기를 관리하는 캐시 같은 공간
+
+### JPA에서 JDBC Template의 개선점
+1. SQL을 직접 작성하지 않아도 된다.
+2. ResultSet을 사용하지 않아도 객체가 자동으로 맵핑된다.
+3. 데이터베이스의 종류가 변경되어도 수정 범위가 작다.
