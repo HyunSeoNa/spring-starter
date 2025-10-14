@@ -1,6 +1,7 @@
 package com.ssmi.springstarter.common;
 
 import com.ssmi.springstarter.repository.JdbcMemberRepository;
+import com.ssmi.springstarter.repository.JdbcTemplateMemberRepository;
 import com.ssmi.springstarter.repository.MemberRepository;
 import com.ssmi.springstarter.repository.MemoryMemberRepository;
 import com.ssmi.springstarter.service.MemberService;
@@ -33,6 +34,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
