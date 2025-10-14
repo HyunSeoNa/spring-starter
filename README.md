@@ -34,4 +34,23 @@
 1. 반복적이고 복잡한 코드
    * SQL 실행을 위해 Connection, PreparedStatement, ResultSet을 직접 작성해야한다.
    * try-catch-finally로 자원 해제 코드를 직접 작성해야한다.(=> 코드가 길어지고 가독성이 떨어진다.)
-2. 트랜잭션 관리를 직접 해야한다.
+
+## JDBC Template
+### 정의
+* Springframework 에서 제공하는 JDBC 클래스
+* 순수 JDBC 코드를 단순화하여 SQL 중심의 데이터 접근을 쉽게 만들어주는 도구
+* 순수 JDBC의 반복적이고 복잡한 코드를 대신 처리
+
+### JDBC Template 동작
+1. DB Connection 관리 - Connection 자동 생성 및 해제
+2. SQL 실행 - PreparedStatement 자동 생성 및 실행
+3. 예외처리
+4. 사용 자원 해제 - ResultSet, Statement, Connection 자동 해제 
+5. 반복 코드 제거 - try-catch-finally 제거
+
+### JDBC Template에서 순수 JDBC의 단점 개선점
+1. 코드 복잡도
+   * 코드 중복 제거
+   * Connection, Statement, ResultSet 자동 관리
+2. 사용 자원 자동 정리
+   * close()를 수동으로 호출하지 않아도 됨.
