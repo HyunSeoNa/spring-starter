@@ -2,8 +2,7 @@ package com.ssmi.springstarter.service;
 
 import com.ssmi.springstarter.domain.Member;
 import com.ssmi.springstarter.repository.MemberRepository;
-import com.ssmi.springstarter.repository.MemoryMemberRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +15,7 @@ import java.util.Optional;
  * description    :
  */
 
+@Transactional
 public class MemberService {
 
     // 회원 서비스가 메모리 회원 리포지토리 직접 생성
